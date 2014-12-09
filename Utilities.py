@@ -197,24 +197,24 @@
     #else:
         #return infile
 
-#def mkdir(fp):
-    #"""
-    #Create a directory at the indicated path\n
-    #Reproduce the ability of UNIX "mkdir -p" command
-    #(ie if the path already exits no exception will be raised).
-    #@param  fp path name where the folder should be created
-    #@exception  OSError Can be raise by os.mkdir
-    #"""
-    ## Function specific imports
-    #from os import mkdir, path
+def mkdir(fp):
+    """
+    Create a directory at the indicated path\n
+    Reproduce the ability of UNIX "mkdir -p" command
+    (ie if the path already exits no exception will be raised).
+    @param  fp path name where the folder should be created
+    @exception  OSError Can be raise by os.mkdir
+    """
+    # Function specific imports
+    from os import mkdir, path
 
-    #if path.exists(fp) and path.isdir(fp):
-        ##print ("'{}' already exist in the current directory".format(fp))
-        #return fp
-    #else:
-        ##print ("Creating '{}' in the current directory".format(fp))
-        #mkdir(fp)
-        #return fp
+    if path.exists(fp) and path.isdir(fp):
+        #print ("'{}' already exist in the current directory".format(fp))
+        return fp
+    else:
+        #print ("Creating '{}' in the current directory".format(fp))
+        mkdir(fp)
+        return fp
 
 #def merge_files (inpath_list, outpath="out", compress_output=True, bufsize = 100000):
     #"""
